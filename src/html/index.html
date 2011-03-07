@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Load and Link Checker</title>
+		<script src="http://localhost:9810/compile?id=oiny-site-tester"></script>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/screen.css" />
+	</head>
+	<body>
+		<div class="page-container">
+			<h1>Load and Link Checker</h1>
+			<form id="main-form">
+				<div class="form-container">
+					<ul id="check-type-options">
+						<li>
+							<input checked type="radio" name="test-type" value="link-check-test" id="link-check-test" />
+							<label for="link-check-test">Link Checker</label>
+						</li>
+						<li>
+							<input type="radio" name="test-type" value="load-test" id="load-test" />
+							<label for="load-test">Load Test</label>
+						</li>
+					</ul>
+
+					<ul id="test-options">
+						<li class="active">
+							<h2>Link Checker Options:</h2>
+							<ul>
+								<li>
+									<label for="url">URL:</label>
+									<input type="text" value="http://nynycdjira01.oiny.ogilvy.com/secure/Dashboard.jspa" name="url" id="url" />
+								</li>
+								<li>
+									<label for="url">Time of Test (in seconds):</label>
+									<input type="text" value="3" name="test-time" id="test-time" />
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h2>Load Test Options</h2>
+							<label class="full" for="load-test-code">Load Test URLs (JS block, return an array of URLs)</label>
+							<textarea name="load-test-code" id="load-test-code">return [ "http://www.google.com", "http://www.nylaarp.com" ];</textarea>
+						</li>
+					</ul>
+
+					<div class="button-container">
+						<input type="submit" id="start-test" value="Start Test" />
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<script>oiny.Tester.Init();</script>
+	</body>
+</html>

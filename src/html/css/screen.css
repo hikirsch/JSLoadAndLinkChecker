@@ -1,0 +1,20 @@
+body { font-family: Arial; font-size: 12px; line-height: 16px; }
+
+.page-container { padding: 30px; }
+
+h1 { font-size: 20px; line-height: 26px; padding-bottom: 5px; }
+h2 { font-size: 16px; line-height: 20px; padding-bottom: 5px; }
+
+textarea { width: 700px; height: 100px; font-size: 14px; font-family: monospace; }
+
+#check-type-options { overflow: hidden; list-style: none; padding-bottom: 20px; }
+#check-type-options li { float: left; padding-right: 10px; }
+
+#test-options { overflow: hidden; list-style: none; }
+#test-options li { display: none; }
+#test-options li li { display: block; }
+#test-options li.active { display: block; }
+#test-options li label { vertical-align: middle; }
+#test-options li label.full { display: block; }
+
+#test-options input[type='text'] { width: 500px; }
