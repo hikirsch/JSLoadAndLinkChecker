@@ -3,12 +3,15 @@
 	<head>
 		<title>Load and Link Checker</title>
 		<script src="http://localhost:9810/compile?id=oiny-site-tester"></script>
+
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/screen.css" />
 	</head>
+
 	<body>
 		<div class="page-container">
 			<h1>Load and Link Checker</h1>
+
 			<form id="main-form">
 				<div class="form-container">
 					<ul id="check-type-options">
@@ -25,27 +28,40 @@
 					<ul id="test-options">
 						<li class="active">
 							<h2>Link Checker Options:</h2>
+
 							<ul>
 								<li>
 									<label for="url">URL:</label>
-									<input type="text" value="http://nynycdjira01.oiny.ogilvy.com/secure/Dashboard.jspa" name="url" id="url" />
+									<input type="text" value="http://localhost" name="url" id="url" />
 								</li>
 								<li>
 									<label for="url">Time of Test (in seconds):</label>
-									<input type="text" value="3" name="test-time" id="test-time" />
+									<input type="text" value="1" name="test-time" id="test-time" />
+								</li>
+								<li>
+									<label class="full" for="load-test-response-javascript">Test Response Code: </label>
+									function( response ) {<br />
+										<textarea class="enable-tab" name="load-test-response-javascript" id="load-test-response-javascript"></textarea><br />
+									}
 								</li>
 							</ul>
 						</li>
+
 						<li>
 							<h2>Load Test Options</h2>
-							<label class="full" for="load-test-code">Load Test URLs (JS block, return an array of URLs)</label>
-							<textarea name="load-test-code" id="load-test-code">return [ "http://www.google.com", "http://www.nylaarp.com" ];</textarea>
+							<label class="full" for="load-test-code">Load Test URLs (JS block, either return an array of URLs or return a function that returns a single string URL)</label>
+							<textarea class="enable-tab" name="load-test-code" id="load-test-code"></textarea>
 						</li>
 					</ul>
 
 					<div class="button-container">
 						<input type="submit" id="start-test" value="Start Test" />
 					</div>
+				</div>
+
+				<div class="log-container">
+					<strong>Test Cycles:</strong>
+					<span id="test-valid-count-cycles">0</span> of <span id="test-count-cycles">0</span> Successful
 				</div>
 			</form>
 		</div>
